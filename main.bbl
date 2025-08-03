@@ -1,0 +1,217 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{berners2001semantic}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d469e0df304c98f67b55d087ea6187a1}{%
+           family={Berners-Lee},
+           familyi={B\bibinithyphendelim L\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b03c1c11511fa3c1c6224a741f227be4}{%
+           family={Hendler},
+           familyi={H\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fb144ce9931b409b1bdccdff7d3a4ecd}{%
+           family={Lassila},
+           familyi={L\bibinitperiod},
+           given={Ora},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{f4ea8e196bdf65a991bf6b05075d7d62}
+      \strng{fullhash}{f4ea8e196bdf65a991bf6b05075d7d62}
+      \strng{bibnamehash}{f4ea8e196bdf65a991bf6b05075d7d62}
+      \strng{authorbibnamehash}{f4ea8e196bdf65a991bf6b05075d7d62}
+      \strng{authornamehash}{f4ea8e196bdf65a991bf6b05075d7d62}
+      \strng{authorfullhash}{f4ea8e196bdf65a991bf6b05075d7d62}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific American}
+      \field{number}{5}
+      \field{title}{The Semantic Web}
+      \field{volume}{284}
+      \field{year}{2001}
+      \field{pages}{34\bibrangedash 43}
+      \range{pages}{10}
+    \endentry
+    \entry{hogan2021knowledge}{article}{}
+      \name{author}{11}{}{%
+        {{hash=56f2d88e83f41f6e1f0d9a0197c4c7eb}{%
+           family={Hogan},
+           familyi={H\bibinitperiod},
+           given={Aidan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=019293949e6289df4e3b751f3f9ecf4e}{%
+           family={Blomqvist},
+           familyi={B\bibinitperiod},
+           given={Eva},
+           giveni={E\bibinitperiod}}}%
+        {{hash=ac9f2c71e19d14efaa82ad1908d35843}{%
+           family={Cochez},
+           familyi={C\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3eb1335a7c6a4acf8ca2e632ae7f6a09}{%
+           family={d’Amato},
+           familyi={d\bibinitperiod},
+           given={Claudia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=96fa7de0e15705cafb281ade1eaecfd0}{%
+           family={Melo},
+           familyi={M\bibinitperiod},
+           given={Gerard},
+           giveni={G\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=5feae03b05f14f0a5fd1f3e07badd8e6}{%
+           family={Gutierrez},
+           familyi={G\bibinitperiod},
+           given={Claudio},
+           giveni={C\bibinitperiod}}}%
+        {{hash=75f24fe7a15315f35934fc2dfdbc6aa2}{%
+           family={Gayo},
+           familyi={G\bibinitperiod},
+           given={José\bibnamedelimb Emilio\bibnamedelima Labra},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=5ddbf3af24e3802f8842794c8c86b60c}{%
+           family={Kirrane},
+           familyi={K\bibinitperiod},
+           given={Sabrina},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9aabe7235b5cda4ebcca85f21cf40b60}{%
+           family={Neumaier},
+           familyi={N\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a2be0ec850b04b1f5e9fe3aca6bf5226}{%
+           family={Polleres},
+           familyi={P\bibinitperiod},
+           given={Axel},
+           giveni={A\bibinitperiod}}}%
+        {{hash=38026ba4ee6b102b47bf3ffb41325c8f}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{d5ce211d54ee18055922d1ccf1a63ea0}
+      \strng{fullhash}{719fe5e0f40971fe64e49039c89b6325}
+      \strng{bibnamehash}{d5ce211d54ee18055922d1ccf1a63ea0}
+      \strng{authorbibnamehash}{d5ce211d54ee18055922d1ccf1a63ea0}
+      \strng{authornamehash}{d5ce211d54ee18055922d1ccf1a63ea0}
+      \strng{authorfullhash}{719fe5e0f40971fe64e49039c89b6325}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Computing Surveys (CSUR)}
+      \field{number}{4}
+      \field{title}{Knowledge graphs}
+      \field{volume}{54}
+      \field{year}{2021}
+      \field{pages}{1\bibrangedash 37}
+      \range{pages}{37}
+    \endentry
+    \entry{kemper2022datenbanksysteme}{book}{}
+      \name{author}{2}{}{%
+        {{hash=2466c24cd22361559679d58bb1d8da60}{%
+           family={Kemper},
+           familyi={K\bibinitperiod},
+           given={Alfons},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5abd18b38ad2daf026dd065fc49be2a4}{%
+           family={Eickler},
+           familyi={E\bibinitperiod},
+           given={André},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {De Gruyter Oldenbourg}%
+      }
+      \strng{namehash}{dc56f33c2682e44d09ca20dd262dfe70}
+      \strng{fullhash}{dc56f33c2682e44d09ca20dd262dfe70}
+      \strng{bibnamehash}{dc56f33c2682e44d09ca20dd262dfe70}
+      \strng{authorbibnamehash}{dc56f33c2682e44d09ca20dd262dfe70}
+      \strng{authornamehash}{dc56f33c2682e44d09ca20dd262dfe70}
+      \strng{authorfullhash}{dc56f33c2682e44d09ca20dd262dfe70}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{11}
+      \field{title}{Datenbanksysteme: Eine Einführung}
+      \field{year}{2022}
+    \endentry
+    \entry{selinger1979access}{article}{}
+      \name{author}{5}{}{%
+        {{hash=8ea84b95531f7e9d380bf32005e7846e}{%
+           family={Selinger},
+           familyi={S\bibinitperiod},
+           given={Patricia\bibnamedelima G.},
+           giveni={P\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=1c0b87d85d49f3f740de331590881204}{%
+           family={Astrahan},
+           familyi={A\bibinitperiod},
+           given={Morton\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=0d8010431671d34bdbf3a655683bb50c}{%
+           family={Chamberlin},
+           familyi={C\bibinitperiod},
+           given={Donald\bibnamedelima D.},
+           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=45f69e46af47ced7662d822076b2fa77}{%
+           family={Lorie},
+           familyi={L\bibinitperiod},
+           given={Raymond\bibnamedelima A.},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=7acc6386de5fde0e9243550ab61e29a0}{%
+           family={Price},
+           familyi={P\bibinitperiod},
+           given={Thomas\bibnamedelima G.},
+           giveni={T\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{9f5b2df825b3a1c379ac9eabf8d62eac}
+      \strng{fullhash}{85bbbc07ccaca286d06e22863e12794e}
+      \strng{bibnamehash}{9f5b2df825b3a1c379ac9eabf8d62eac}
+      \strng{authorbibnamehash}{9f5b2df825b3a1c379ac9eabf8d62eac}
+      \strng{authornamehash}{9f5b2df825b3a1c379ac9eabf8d62eac}
+      \strng{authorfullhash}{85bbbc07ccaca286d06e22863e12794e}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM SIGMOD Record}
+      \field{number}{2}
+      \field{title}{Access path selection in a relational database management system}
+      \field{volume}{9}
+      \field{year}{1979}
+      \field{pages}{23\bibrangedash 34}
+      \range{pages}{12}
+    \endentry
+  \enddatalist
+  \missing{wylot2018rdf}
+  \missing{ycy2015}
+\endrefsection
+\endinput
+

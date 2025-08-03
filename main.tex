@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage[style=numeric]{biblatex}
+\addbibresource{literatur.bib}
+
+\title{Anfrageoptimierung im RDF-Kontext}
+\author{Samuel Jordan Ouabo}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Einleitung}
+
+Das World Wide Web hat sich in den letzten Jahrzehnten grundlegend gewandelt: Von einer rein hypertextbasierten Dokumentensammlung hin zu einem semantisch vernetzten Informationsraum, der nicht nur für Menschen, sondern auch für Maschinen interpretierbar ist. Diese Entwicklung mündet in der Vision des \textit{Semantic Web}, wie sie von Berners-Lee formuliert wurde – ein Web, in dem Daten nicht nur dargestellt, sondern auch verarbeitet und logisch verknüpft werden können \cite{berners2001semantic}.
+
+Ein zentrales Element des Semantic Web ist das \textit{Resource Description Framework (RDF)}, das Daten in Form von sogenannten Tripeln repräsentiert. Jedes Tripel besteht aus Subjekt, Prädikat und Objekt und bildet damit eine atomare Aussage über eine Ressource. In der Praxis entstehen durch RDF große, heterogene Graphstrukturen – sogenannte Wissensgraphen –, die in Bereichen wie Linked Data, Bioinformatik, maschinelles Lernen oder öffentliche Verwaltung eingesetzt werden \cite{hogan2021knowledge}. Zur Abfrage solcher Graphen dient die standardisierte Sprache \textit{SPARQL}, die auf dem Prinzip des \textit{Graph Pattern Matching} basiert.
+
+Mit der wachsenden Verbreitung von RDF-basierten Datenbanken (auch als Triple Stores bezeichnet) stellt sich zunehmend die Frage, wie solche Systeme performant und skalierbar Anfragen verarbeiten können. Anders als relationale Datenbanksysteme verfügen RDF-Stores jedoch über keine feste Schemadefinition, sondern arbeiten unter der \textit{Open World Assumption} (OWA). Diese Eigenschaften erschweren die Anwendung klassischer Optimierungskonzepte erheblich: Typische Verfahren wie Kostenmodelle, Kardinalitätsschätzungen oder regelbasierte Transformationsstrategien stoßen im RDF-Kontext häufig an ihre Grenzen \cite{wylot2018rdf, ycy2015}.
+
+Die klassische Datenbankforschung – etwa wie sie von Kemper und Eickler beschrieben wurde – hat über Jahrzehnte eine Vielzahl bewährter Methoden für die relationale Anfrageverarbeitung entwickelt \cite{kemper2022datenbanksysteme}. Zu diesen zählen algebraische Anfragepläne, dynamische Join-Reihenfolgenoptimierung und komplexe Indexierungsstrategien. Diese Techniken bilden einen wichtigen Referenzrahmen für die Frage, inwiefern und unter welchen Bedingungen sie sich auch im semantischen Kontext übertragen oder adaptieren lassen.
+
+Ziel dieser Seminararbeit ist es, einen systematischen Überblick über Optimierungsstrategien im RDF-Kontext zu geben. Dazu werden zunächst die Grundlagen der relationalen Anfrageverarbeitung (Kapitel~\ref{sec:relational}) vorgestellt und mit dem RDF-Datenmodell und SPARQL verglichen (Kapitel~\ref{sec:rdf}). Darauf aufbauend werden die spezifischen Optimierungsprobleme und -ansätze in RDF-Datenbanken analysiert (Kapitel~\ref{sec:probleme} und~\ref{sec:ansaetze}). Abschließend erfolgt eine vergleichende Einordnung klassischer und semantischer Optimierungsprinzipien (Kapitel~\ref{sec:vergleich}) sowie eine kritische Diskussion aktueller Limitationen und zukünftiger Forschungsfragen (Kapitel~\ref{sec:diskussion} und~\ref{sec:fazit}).
+
+
+
+\section{Grundlagen relationaler Anfrageverarbeitung}
+
+Die relationale Anfrageverarbeitung bildet das Rückgrat klassischer Datenbanksysteme. Ziel ist es, Anfragen – typischerweise in der Sprache SQL formuliert – unabhängig von der physischen Speicherung effizient auszuführen. Grundlage hierfür ist eine mehrstufige Verarbeitungspipeline, die unter anderem durch Kemper und Eickler systematisch dargestellt wird \cite{kemper2022datenbanksysteme}.
+
+\subsection{Anfragebearbeitungsprozess}
+
+Die Bearbeitung einer SQL-Anfrage erfolgt üblicherweise in drei Hauptphasen:
+
+\begin{enumerate}
+    \item \textbf{Anfrageübersetzung:} Die SQL-Anfrage wird in einen sogenannten \emph{algebraischen Anfragebaum} übersetzt. Dieser dient als interne Repräsentation und basiert auf Operatoren der relationalen Algebra (z.\,B. $\sigma$ für Selektion, $\pi$ für Projektion, $\bowtie$ für Join).
+    
+    \item \textbf{Anfrageoptimierung:} Der Anfragebaum wird durch Transformationen in eine äquivalente, aber effizienter auszuführende Variante überführt. Dies kann regelbasiert (durch algebraische Umformungsregeln) oder kostenbasiert (unter Zuhilfenahme eines Kostenmodells) erfolgen.
+    
+    \item \textbf{Anfrageausführung:} Der optimierte Anfrageplan wird anschließend vom DBMS durch konkrete Zugriffe auf Tabellen, Indizes und Pufferspeicherstrukturen ausgeführt.
+\end{enumerate}
+
+\subsection{Relationale Algebra}
+
+Die relationale Algebra stellt eine formale Grundlage für Anfragen dar. Sie umfasst zentrale Operatoren:
+
+\begin{itemize}
+    \item \textbf{Selektion ($\sigma$):} Filtert Tupel auf Basis eines Prädikats, z.\,B. $\sigma_{note > 2.0}(\text{Klausuren})$.
+    \item \textbf{Projektion ($\pi$):} Reduziert die Attributmenge, z.\,B. $\pi_{\text{name, note}}(\text{Klausuren})$.
+    \item \textbf{Join ($\bowtie$):} Verknüpft zwei Relationen über gemeinsame Attribute, z.\,B. $\text{Studenten} \bowtie_{\text{matrNr}} \text{Klausuren}$.
+    \item \textbf{Mengenoperationen:} Union, Differenz und kartesisches Produkt.
+\end{itemize}
+
+Die Kombination dieser Operatoren in einem Baum hat großen Einfluss auf die Effizienz – insbesondere, wenn redundante Zwischenresultate vermieden werden.
+
+\subsection{Optimierungsstrategien}
+
+Ziel der Anfrageoptimierung ist es, einen möglichst kostengünstigen Ausführungsplan zu generieren. Dazu kommen zwei Hauptstrategien zum Einsatz:
+
+\begin{itemize}
+    \item \textbf{Regelbasierte Optimierung:} Transformation des Anfragebaums anhand äquivalenter Umschreibungen. Beispiele sind das Vorziehen selektiver Operationen (``Selektion vor Join'') oder Projektionsreduktionen zur Verkleinerung der Zwischenergebnisse.
+    
+    \item \textbf{Kostenbasierte Optimierung:} Hierbei werden Statistiken über Tupelanzahl, Kardinalitäten und Indizes genutzt, um die geschätzten Kosten alternativer Pläne zu bewerten. Das Ziel ist, den optimalen Plan mit minimalem Ressourcenverbrauch auszuwählen.
+\end{itemize}
+
+Ein klassisches Beispiel für kostenbasierte Optimierung ist der \emph{System R Optimizer}, der mittels dynamischer Programmierung die optimale Join-Reihenfolge bestimmt \cite{selinger1979access}.
+
+\subsection{Einflussfaktoren auf die Performanz}
+
+Die Ausführungszeit einer Anfrage hängt von zahlreichen Systemaspekten ab:
+
+\begin{itemize}
+    \item \textbf{Indexierung:} Beschleunigt den Zugriff auf einzelne Tupel oder Wertebereiche.
+    \item \textbf{Buffer Management:} Vermeidet unnötigen Festplattenzugriff durch intelligenten Umgang mit dem Hauptspeicher.
+    \item \textbf{Parallelisierung:} Nutzt mehrere CPU-Kerne zur gleichzeitigen Ausführung von Teilplänen.
+    \item \textbf{Materialisierung vs. Pipelinierung:} Unterschiedliche Strategien zur Auswertung mehrstufiger Operatorbäume.
+\end{itemize}
+
+\subsection{IDB und EDB: Relevanz für Optimierung}
+
+In der Datalog-Theorie wird zwischen der \emph{Extensional Database (EDB)} – also den gespeicherten Basisdaten – und der \emph{Intensional Database (IDB)} – abgeleiteten Daten aus Regeln – unterschieden. Diese Konzepte sind insbesondere bei rekursiven Abfragen relevant.
+
+Beispiel: In einem Regelwerk könnte die transitiv abgeschlossene ``Vorgesetztenbeziehung'' durch rekursive Regeln aus einfachen ``Chef von''-Tripeln berechnet werden – ähnlich wie SPARQL \texttt{PROPERTY PATHS} dies im RDF-Kontext ermöglichen. Optimierungsstrategien müssen in solchen Fällen den Fixpunktalgorithmus berücksichtigen.
+
+
+
+\section{Hauptteil}
+Zum Beispiel: RDF basiert auf Tripeln.
+
+\section{Fazit}
+Hier schließt du deine Arbeit ab.
+
+\printbibliography
+
+\end{document}
