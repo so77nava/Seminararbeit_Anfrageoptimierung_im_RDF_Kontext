@@ -19,6 +19,42 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{antonellini2015owl}{article}{}
+      \name{author}{3}{}{%
+        {{hash=ec6b103492b1947167ac81f20bc25362}{%
+           family={Antonellini},
+           familyi={A\bibinitperiod},
+           given={Daniele},
+           giveni={D\bibinitperiod}}}%
+        {{hash=a551d13f7212f25612aada1a5198f4f9}{%
+           family={Poggi},
+           familyi={P\bibinitperiod},
+           given={Agnese},
+           giveni={A\bibinitperiod}}}%
+        {{hash=aec11fe01154e6144f81aab074442a38}{%
+           family={Rosati},
+           familyi={R\bibinitperiod},
+           given={Riccardo},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{a4511107d5fec3d2ea5778ff743901c7}
+      \strng{fullhash}{a4511107d5fec3d2ea5778ff743901c7}
+      \strng{bibnamehash}{a4511107d5fec3d2ea5778ff743901c7}
+      \strng{authorbibnamehash}{a4511107d5fec3d2ea5778ff743901c7}
+      \strng{authornamehash}{a4511107d5fec3d2ea5778ff743901c7}
+      \strng{authorfullhash}{a4511107d5fec3d2ea5778ff743901c7}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Semantic Web Journal}
+      \field{number}{4}
+      \field{title}{OWL and SPARQL: From Theory to Practice}
+      \field{volume}{6}
+      \field{year}{2015}
+      \field{pages}{361\bibrangedash 375}
+      \range{pages}{15}
+    \endentry
     \entry{berners2001semantic}{article}{}
       \name{author}{3}{}{%
         {{hash=d469e0df304c98f67b55d087ea6187a1}{%
@@ -209,9 +245,83 @@
       \field{pages}{23\bibrangedash 34}
       \range{pages}{12}
     \endentry
+    \entry{wylot2018rdf}{article}{}
+      \name{author}{4}{}{%
+        {{hash=b2a59fa56364c90daf3f10c182126810}{%
+           family={Wylot},
+           familyi={W\bibinitperiod},
+           given={Marcin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=05232baa38def9c3f8d630f7f3a021a0}{%
+           family={Cudré-Mauroux},
+           familyi={C\bibinithyphendelim M\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod}}}%
+        {{hash=0d3fc97ef4e0fb1086836b1da46574d3}{%
+           family={Rohde},
+           familyi={R\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=193692d8ad58c187d8ec724256cf8422}{%
+           family={Käfer},
+           familyi={K\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6ae2790efe06ffc7d9d8841dd28d6ed}
+      \strng{fullhash}{582e11d9809a0a9cd898708bd9eb1425}
+      \strng{bibnamehash}{b6ae2790efe06ffc7d9d8841dd28d6ed}
+      \strng{authorbibnamehash}{b6ae2790efe06ffc7d9d8841dd28d6ed}
+      \strng{authornamehash}{b6ae2790efe06ffc7d9d8841dd28d6ed}
+      \strng{authorfullhash}{582e11d9809a0a9cd898708bd9eb1425}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Computing Surveys}
+      \field{number}{4}
+      \field{title}{RDF Data Storage and Query Processing Schemes: A Survey}
+      \field{volume}{51}
+      \field{year}{2018}
+      \field{pages}{1\bibrangedash 36}
+      \range{pages}{36}
+    \endentry
+    \entry{ycy2015}{article}{}
+      \name{author}{3}{}{%
+        {{hash=e0ed0274011dfb88eb4353e55d894306}{%
+           family={Yuksel},
+           familyi={Y\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=01759784e73353a175e9a023429a56d3}{%
+           family={Cankaya},
+           familyi={C\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=549bb78b09f0d8561b42febfb412936e}{%
+           family={Yuksel},
+           familyi={Y\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{32f8bf32cb6a83b585f50de564f2c0f8}
+      \strng{fullhash}{32f8bf32cb6a83b585f50de564f2c0f8}
+      \strng{bibnamehash}{32f8bf32cb6a83b585f50de564f2c0f8}
+      \strng{authorbibnamehash}{32f8bf32cb6a83b585f50de564f2c0f8}
+      \strng{authornamehash}{32f8bf32cb6a83b585f50de564f2c0f8}
+      \strng{authorfullhash}{32f8bf32cb6a83b585f50de564f2c0f8}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Procedia Computer Science}
+      \field{title}{An analysis of RDF storage models and query optimization techniques}
+      \field{volume}{59}
+      \field{year}{2015}
+      \field{pages}{516\bibrangedash 525}
+      \range{pages}{10}
+    \endentry
   \enddatalist
-  \missing{wylot2018rdf}
-  \missing{ycy2015}
 \endrefsection
 \endinput
 

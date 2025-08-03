@@ -2368,6 +2368,7 @@
     <bcf:citekey order="4" intorder="1">kemper2022datenbanksysteme</bcf:citekey>
     <bcf:citekey order="5" intorder="1">kemper2022datenbanksysteme</bcf:citekey>
     <bcf:citekey order="6" intorder="1">selinger1979access</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">antonellini2015owl</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

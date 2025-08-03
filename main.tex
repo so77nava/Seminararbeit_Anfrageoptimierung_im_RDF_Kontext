@@ -6,6 +6,15 @@
 \usepackage{csquotes}
 \usepackage[style=numeric]{biblatex}
 \addbibresource{literatur.bib}
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  breaklines=true,
+  frame=single
+  language=SPARQL,
+  morekeywords={SELECT, WHERE, FILTER, ORDER BY, DESC, OPTIONAL, UNION, CONSTRUCT, ASK, DESCRIBE, GRAPH, BIND, VALUES, SERVICE},
+}
+
 
 \title{Anfrageoptimierung im RDF-Kontext}
 \author{Samuel Jordan Ouabo}
@@ -89,6 +98,72 @@ In der Datalog-Theorie wird zwischen der \emph{Extensional Database (EDB)} – a
 
 Beispiel: In einem Regelwerk könnte die transitiv abgeschlossene ``Vorgesetztenbeziehung'' durch rekursive Regeln aus einfachen ``Chef von''-Tripeln berechnet werden – ähnlich wie SPARQL \texttt{PROPERTY PATHS} dies im RDF-Kontext ermöglichen. Optimierungsstrategien müssen in solchen Fällen den Fixpunktalgorithmus berücksichtigen.
 
+% ---------------------- Kapitel 3 ------------------------
+\section{RDF \& SPARQL – Datenmodell und Anfrageverarbeitung} \label{sec:rdf}
+
+Das \textit{Resource Description Framework (RDF)} ist ein standardisiertes Datenmodell zur Repräsentation strukturierter Informationen im Web. Es bildet die Grundlage des Semantic Web und ermöglicht die Modellierung von Aussagen über Ressourcen in Form von Tripeln. Die zugehörige Anfragesprache \textit{SPARQL} erlaubt das gezielte Durchsuchen solcher RDF-Graphen und stellt somit das Gegenstück zu SQL im relationalen Kontext dar.
+
+\subsection{RDF: Struktur und Semantik}
+
+RDF beschreibt Informationen durch atomare Aussagen in der Form eines Tripels: \textit{(Subjekt, Prädikat, Objekt)}. Diese Tripel lassen sich als gerichtete, beschriftete Kanten in einem Graphen interpretieren. Subjekt und Objekt sind Ressourcen (identifiziert durch URIs) oder Literale; das Prädikat beschreibt die Beziehung zwischen ihnen.
+
+\begin{lstlisting}[caption=Beispielhafte RDF-Repräsentation einer Einwohnerzahl]
+dbr:Erlangen dbo:populationTotal "114257"^^xsd:nonNegativeInteger .
+\end{lstlisting}
+
+RDF ist schemalos, kann aber mithilfe von \textit{RDF Schema (RDFS)} und der \textit{Web Ontology Language (OWL)} um Typinformationen, Klassenhierarchien und logische Einschränkungen ergänzt werden. Diese ermöglichen auch Inferenzregeln, wie z.\,B. das automatische Ableiten transitiver Beziehungen \cite{antonellini2015owl}.
+
+\subsection{Open World Assumption (OWA)}
+
+Ein zentrales semantisches Prinzip von RDF ist die \textit{Open World Assumption} (OWA): Das Fehlen einer Aussage bedeutet nicht, dass sie falsch ist – sondern lediglich, dass nichts darüber bekannt ist. Dieses Prinzip steht im Gegensatz zur \textit{Closed World Assumption (CWA)} relationaler Systeme, wo nicht gespeicherte Fakten implizit als falsch betrachtet werden. Die OWA wirkt sich direkt auf Optimierungsstrategien aus, da beispielsweise Filterelimination oder Join-Elimination nicht ohne Weiteres möglich sind.
+
+\subsection{SPARQL: Abfragesprache für RDF}
+
+SPARQL (SPARQL Protocol and RDF Query Language) ist die standardisierte Sprache zur Abfrage von RDF-Daten. SPARQL-Anfragen bestehen aus \textit{Graph Patterns}, die über Variablen definiert werden und mit Tripeln in der Datenbasis abgeglichen werden.
+
+\begin{lstlisting}[caption=SPARQL-Abfrage nach Städten mit mehr als 100.000 Einwohnern]
+SELECT ?city ?population WHERE {
+  ?city rdf:type dbo:City .
+  ?city dbo:country dbr:Germany .
+  ?city dbo:populationTotal ?population .
+  FILTER (?population > 100000)
+}
+ORDER BY DESC(?population)
+\end{lstlisting}
+
+SPARQL unterstützt vier Haupttypen von Anfragen:
+\begin{itemize}
+    \item \textbf{SELECT:} Liefert Bindungen für Variablen.
+    \item \textbf{ASK:} Gibt einen Wahrheitswert zurück.
+    \item \textbf{CONSTRUCT:} Generiert neue RDF-Tripel.
+    \item \textbf{DESCRIBE:} Liefert eine Beschreibung einer Ressource.
+\end{itemize}
+
+Darüber hinaus erlaubt SPARQL komplexe Konstrukte wie \texttt{OPTIONAL} (äquivalent zu \textit{left outer joins}), \texttt{UNION}, \texttt{FILTER} sowie \texttt{PROPERTY PATHS} zur Navigation in RDF-Graphen.
+
+\subsection{Anfrageverarbeitung in RDF-Datenbanken}
+
+RDF-DBMS (z.\,B. Apache Jena, Virtuoso, Blazegraph) verarbeiten SPARQL-Anfragen in mehreren Schritten:
+
+\begin{enumerate}
+    \item \textbf{Parsing:} Die SPARQL-Anfrage wird in eine interne Repräsentation überführt.
+    \item \textbf{Optimierung:} Der Anfragebaum wird hinsichtlich Filterplatzierung, Join-Reihenfolge und Pattern-Gruppe analysiert.
+    \item \textbf{Ausführung:} Die optimierte Anfrage wird über spezialisierte Speicherstrukturen (z.\,B. Triple Tables, Hexastore) ausgeführt.
+\end{enumerate}
+
+Ein zentrales Problem besteht in der \textbf{hohen Joindichte}: Selbst einfache Abfragen erfordern mehrere Joins, da RDF keine Attributtabellen, sondern atomare Aussagen nutzt. Dadurch entstehen viele Kanten im Anfragegraphen – mit teils erheblichem Einfluss auf die Laufzeit.
+
+\subsection{Technische Besonderheiten RDF-basierter Systeme}
+
+Im Gegensatz zu relationalen Datenbanken setzen RDF-Systeme auf spezielle Speicherstrukturen:
+\begin{itemize}
+    \item \textbf{Triple Table:} Speicherung aller Tripel in einer dreispaltigen Tabelle (Subjekt, Prädikat, Objekt).
+    \item \textbf{Vertical Partitioning:} Separate Tabellen je Prädikat zur Effizienzsteigerung.
+    \item \textbf{Property Tables:} Gruppierung häufig gemeinsam auftretender Prädikate.
+    \item \textbf{Hexastore:} Speicherung aller 6 Permutationen von S-P-O zur Beschleunigung von Joins.
+\end{itemize}
+
+Diese Strukturen bestimmen maßgeblich die Optimierbarkeit von SPARQL-Anfragen und beeinflussen sowohl den Planungsaufwand als auch die Ausführungsgeschwindigkeit.
 
 
 \section{Hauptteil}
