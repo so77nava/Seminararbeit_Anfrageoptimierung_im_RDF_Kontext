@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1754241341.07918 "main.bcf" "main.bbl" "main" 1754241581.67234 0
+["biber main"] 1754241341.07918 "main.bcf" "main.bbl" "main" 1754242726.48477 0
   "literatur.bib" 1754241337 5938 997f4024da90799c2ed21d982b4ceff2 ""
-  "main.bcf" 1754241581 109249 30c25bb866230b8d3d2745ea7b0d6fcf "pdflatex"
+  "main.bcf" 1754242726 109249 30c25bb866230b8d3d2745ea7b0d6fcf "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1754241580.2394 "e:/Master/Semester 3/Seminar Web Sementic/Latex_Quellcoden/main.tex" "main.pdf" "main" 1754241581.67317 0
+["pdflatex"] 1754242725.29293 "e:/Master/Semester 3/Seminar Web Sementic/Latex_Quellcoden/main.tex" "main.pdf" "main" 1754242726.48687 0
   "C:/Users/Ouabo Jordan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1754232757 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Ouabo Jordan/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1754233664 14064 7962abd5d580f8b2d705190748c6000b ""
   "C:/Users/Ouabo Jordan/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1754232688 24228385 89b1a59ee2d0126561f313bdc2347583 ""
@@ -31,7 +31,6 @@
   "C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
   "C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247596666 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
-  "C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
   "C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1247596667 36118 fad905eba93cff5bce1e185fe980a177 ""
   "C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb" 1247596666 24252 1e4e051947e12dfb50fee0b7f4e26e3a ""
@@ -90,12 +89,12 @@
   "C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.def" 1280941015 1620 fb1c32b818f2058eca187e5c41dfae77 ""
   "C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.sty" 1280941015 6187 b27afc771af565d3a9ff1ca7d16d0d46 ""
   "C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "e:/Master/Semester 3/Seminar Web Sementic/Latex_Quellcoden/main.tex" 1754241578 38426 206b1a2b3390e77bd23d0db0f7d132e0 ""
-  "main.aux" 1754241581 9482 5ab77a7185e41f9fce1d6f402928de99 "pdflatex"
+  "e:/Master/Semester 3/Seminar Web Sementic/Latex_Quellcoden/main.tex" 1754242723 38949 e43bcc8d3fb3552e07a6d1efd554aea8 ""
+  "main.aux" 1754242726 9522 caaf174cc1422880ba3f2f0f26083868 "pdflatex"
   "main.bbl" 1754241343 30201 de7ff4679f5496e5cd913e7c445afb7c "biber main"
-  "main.run.xml" 1754241581 2334 1b5b1514c9fec959a0c2940f259774d3 "pdflatex"
-  "main.tex" 1754241578 38426 206b1a2b3390e77bd23d0db0f7d132e0 ""
-  "main.toc" 1754241581 3372 ebbd1c44d41f5f360d5cbb31899dd759 "pdflatex"
+  "main.run.xml" 1754242726 2334 1b5b1514c9fec959a0c2940f259774d3 "pdflatex"
+  "main.tex" 1754242723 38949 e43bcc8d3fb3552e07a6d1efd554aea8 ""
+  "main.toc" 1754242726 3372 ebbd1c44d41f5f360d5cbb31899dd759 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"
