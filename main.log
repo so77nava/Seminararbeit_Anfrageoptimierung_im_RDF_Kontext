@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.3)  3 AUG 2025 18:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.3)  3 AUG 2025 19:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -498,9 +498,6 @@ Package biblatex Info: Reference segment=0 on input line 23.
 LaTeX Warning: Reference `sec:relational' on page 3 undefined on input line 40.
 
 
-LaTeX Warning: Reference `sec:vergleich' on page 3 undefined on input line 40.
-
-
 LaTeX Warning: Reference `sec:diskussion' on page 3 undefined on input line 40.
 
 
@@ -635,21 +632,51 @@ Overfull \hbox (48.86076pt too wide) in paragraph at lines 281--282
  []
 
 [14]
-Overfull \hbox (2.42802pt too wide) in paragraph at lines 301--301
+Overfull \hbox (4.00179pt too wide) in paragraph at lines 296--296
+[]\OT1/cmr/bx/n/17.28 Vergleich mit klas-si-schen Op-ti-mie-rungs-kon-
+ []
+
+[15]
+Overfull \hbox (7.5126pt too wide) in paragraph at lines 329--330
+[]\OT1/cmr/m/n/12 Beispielsweise k[]onnen RDF-Inferenzsysteme wie Apa-che Je-na durch RDFS-
+ []
+
+[16]
+Underfull \hbox (badness 1221) in paragraph at lines 354--354
+[]\OT1/cmr/m/n/12 festes, ge-schlos-se-nes Sche-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
+[]\OT1/cmr/m/n/12 heuristisch, kos-ten-ba-siert,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--358
+[]\OT1/cmr/m/n/12 IDB/EDB-
+ []
+
+
+Overfull \hbox (58.56496pt too wide) in paragraph at lines 349--361
+ [][] 
+ []
+
+[17]
+Overfull \hbox (2.42802pt too wide) in paragraph at lines 368--368
 []\OT1/cmr/m/n/12 Tim Berners-Lee, Ja-mes Hend-ler und Ora Las-si-la. []  The Se-man-tic Web\.
  []
 
 
-Overfull \hbox (3.40233pt too wide) in paragraph at lines 301--301
+Overfull \hbox (3.40233pt too wide) in paragraph at lines 368--368
 []\OT1/cmr/m/n/12 Alfons Kem-per und An-dr^^Se Eick-ler. \OT1/cmr/m/it/12 Da-ten-bank-sys-te-me: Ei-ne Einf[]uhrung\OT1/cmr/m/n/12 .
  []
 
 
-Overfull \hbox (1.83286pt too wide) in paragraph at lines 301--301
+Overfull \hbox (1.83286pt too wide) in paragraph at lines 368--368
 []\OT1/cmr/m/n/12 Muhammad Sa-leem u.a. []  A Struc-tu-ral Ap-proach for Op-ti-mi-zing SPAR-
  []
 
-[15] [16] (main.aux)
+[18] [19] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -663,17 +690,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13570 strings out of 474486
- 248371 string characters out of 5740416
+ 13585 strings out of 474486
+ 248783 string characters out of 5740416
  1978542 words of memory out of 5000000
- 35732 multiletter control sequences out of 15000+600000
+ 35747 multiletter control sequences out of 15000+600000
  565215 words of font info for 61 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 66i,6n,81p,845b,2371s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 66i,11n,81p,845b,2371s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Ouabo Jordan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (16 pages, 160229 bytes).
+Output written on main.pdf (19 pages, 167553 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
+ 109 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

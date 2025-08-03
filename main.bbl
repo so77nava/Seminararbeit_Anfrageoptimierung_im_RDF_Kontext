@@ -290,6 +290,76 @@
       \field{title}{Datenbanksysteme: Eine Einführung}
       \field{year}{2022}
     \endentry
+    \entry{motik2007sparql}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=19675e3564262f05938636b8b2dd3c68}{%
+           family={Motik},
+           familyi={M\bibinitperiod},
+           given={Boris},
+           giveni={B\bibinitperiod}}}%
+        {{hash=fb33c2b55c178be2daf66ac89cdac9cc}{%
+           family={Horrocks},
+           familyi={H\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod}}}%
+        {{hash=4acfec0ba909012fe393c56da85b4fa9}{%
+           family={Sattler},
+           familyi={S\bibinitperiod},
+           given={Uli},
+           giveni={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{a47f178af187f994c9f2d5bab97131a5}
+      \strng{fullhash}{a47f178af187f994c9f2d5bab97131a5}
+      \strng{bibnamehash}{a47f178af187f994c9f2d5bab97131a5}
+      \strng{authorbibnamehash}{a47f178af187f994c9f2d5bab97131a5}
+      \strng{authornamehash}{a47f178af187f994c9f2d5bab97131a5}
+      \strng{authorfullhash}{a47f178af187f994c9f2d5bab97131a5}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Semantic Web Conference (ISWC)}
+      \field{title}{Bridging the Gap Between OWL and Relational Databases}
+      \field{year}{2007}
+      \field{pages}{10\bibrangedash 15}
+      \range{pages}{6}
+    \endentry
+    \entry{perez2009semantics}{article}{}
+      \name{author}{3}{}{%
+        {{hash=a991f832b9236d272602bb0cce8717ce}{%
+           family={Pérez},
+           familyi={P\bibinitperiod},
+           given={Jorge},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9282d63c7c5bda72aad9b39bc68fddeb}{%
+           family={Arenas},
+           familyi={A\bibinitperiod},
+           given={Marcelo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5feae03b05f14f0a5fd1f3e07badd8e6}{%
+           family={Gutierrez},
+           familyi={G\bibinitperiod},
+           given={Claudio},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{9fca1e4ef52a32d40484eff4b3346ac3}
+      \strng{fullhash}{9fca1e4ef52a32d40484eff4b3346ac3}
+      \strng{bibnamehash}{9fca1e4ef52a32d40484eff4b3346ac3}
+      \strng{authorbibnamehash}{9fca1e4ef52a32d40484eff4b3346ac3}
+      \strng{authornamehash}{9fca1e4ef52a32d40484eff4b3346ac3}
+      \strng{authorfullhash}{9fca1e4ef52a32d40484eff4b3346ac3}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Transactions on Database Systems}
+      \field{number}{3}
+      \field{title}{Semantics and Complexity of SPARQL}
+      \field{volume}{34}
+      \field{year}{2009}
+      \field{pages}{16:1\bibrangedash 16:45}
+      \range{pages}{-1}
+    \endentry
     \entry{akhtar2019structure}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=d2274fbe986995b8ac0dabe2949b6c6f}{%

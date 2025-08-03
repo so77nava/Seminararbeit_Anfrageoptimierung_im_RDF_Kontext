@@ -292,6 +292,73 @@ Schließlich ermöglichen Ontologien eine semantische Erweiterung der Anfragever
 
 Problematisch ist jedoch, dass komplexe Ontologien zu einer exponentiellen Erweiterung des Anfragebaums führen können, was die Optimierung massiv erschwert. In der Praxis ist daher häufig eine Mischung aus statischer Inferenz (Materialisierung) und dynamischer Umschreibung (Rewriting) anzutreffen.
 
+% ---------------------- Kapitel 6 ------------------------
+\section{Vergleich mit klassischen Optimierungskonzepten} \label{sec:vergleich}
+
+Die Optimierung von SPARQL-Anfragen in RDF-Datenbanken steht in enger Beziehung zur traditionellen Anfrageoptimierung in relationalen Datenbanksystemen. Viele grundlegende Prinzipien lassen sich auf den RDF-Kontext übertragen, müssen jedoch an die semantische und graphenorientierte Struktur des Datenmodells angepasst werden. In diesem Kapitel werden zentrale Gemeinsamkeiten und Unterschiede analysiert, insbesondere im Hinblick auf das Modell der \textit{Intensional Database (IDB)} und \textit{Extensional Database (EDB)}, wie es in logikbasierten Systemen etabliert ist.
+
+\subsection{Gemeinsamkeiten}
+
+Sowohl relationale als auch RDF-basierte Systeme verfolgen das Ziel, aus einer logischen Anfrage einen möglichst effizienten Ausführungsplan zu erzeugen. In beiden Fällen kommen ähnliche Optimierungsstrategien zum Einsatz:
+
+\begin{itemize}
+    \item \textbf{Anfragealgebra:} Relationale Systeme nutzen die relationale Algebra, RDF-Systeme arbeiten intern mit Graphpattern-Bäumen, die algebraisch transformiert werden können \cite{perez2009semantics}.
+    \item \textbf{Join-Optimierung:} Die Reihenfolge von Joins hat großen Einfluss auf die Laufzeit. Dynamische Programmierung (z.\,B. nach Selinger) oder heuristische Verfahren finden in beiden Bereichen Anwendung.
+    \item \textbf{Indexierung:} Beide Systemtypen verwenden Indizes zur Beschleunigung des Zugriffs. In RDF-Systemen kommen zusätzlich Hexastore- oder Bitmap-Indizes zum Einsatz.
+    \item \textbf{Kostenmodelle:} Sowohl in SQL- als auch in SPARQL-Engines existieren kostenbasierte Optimierer, die geschätzte Ausführungskosten vergleichen.
+\end{itemize}
+
+\subsection{Unterschiede}
+
+Trotz dieser Ähnlichkeiten ergeben sich erhebliche Unterschiede, die sich direkt auf die Optimierungsverfahren auswirken:
+
+\begin{itemize}
+    \item \textbf{Schema vs. Ontologie:} Relationale Datenbanken verfügen über ein explizites, vollständiges Schema. RDF hingegen ist schemalos und optional semantisch über Ontologien ergänzt. Dies erschwert Kardinalitätsschätzungen, Typableitungen und Indexnutzung.
+    
+    \item \textbf{Closed World Assumption vs. Open World Assumption:} In SQL gilt: Was nicht gespeichert ist, ist falsch. In SPARQL (unter OWA): Was nicht bekannt ist, ist potenziell wahr. Dadurch verlieren viele Optimierungsregeln ihre Gültigkeit, z.\,B. Join-Eliminierung oder Negationsvereinfachung.
+    
+    \item \textbf{Datenmodell:} Während das relationale Modell auf Tabellen mit festen Attributen basiert, nutzt RDF ein graphenbasiertes Tripelmodell. Dies führt zu Joins auf einer generischen Relation (Tripelstruktur), was die Ausführungskosten für komplexe Abfragen signifikant erhöht.
+    
+    \item \textbf{Abfragesprachen:} SQL ist weitgehend vollständig algebraisch beschreibbar, SPARQL enthält Konstrukte wie OPTIONAL, MINUS und PROPERTY PATHS, die nicht direkt in klassische Algebren abbildbar sind.
+\end{itemize}
+
+\subsection{IDB/EDB-Konzepte im RDF-Kontext}
+
+Die Unterscheidung in EDB (Extensional Database, also Basisdaten) und IDB (Intensional Database, abgeleitete Daten durch Regeln) stammt aus der Datalog-Theorie. Diese Trennung findet im RDF-Bereich Entsprechungen bei der Verwendung von Regeln und Inferenz.
+
+Beispielsweise können RDF-Inferenzsysteme wie Apache Jena durch RDFS- oder OWL-Regeln neue Tripel ableiten – etwa durch Subklassenrelationen oder transitive Eigenschaften. Diese „abgeleiteten“ Aussagen entsprechen IDB-Fakten. Die Basisdaten hingegen – d.\,h. die ursprünglich geladenen Tripel – stellen die EDB dar.
+
+Ein Beispiel für transitive Inferenz:
+
+\begin{lstlisting}[caption=Beispiel für abgeleitete Tripel durch Inferenz]
+ex:A ex:partOf ex:B .
+ex:B ex:partOf ex:C .
+
+# abgeleitet (transitiv):
+ex:A ex:partOf ex:C .
+\end{lstlisting}
+
+Für die Optimierung bedeutet dies, dass Anfragepläne sowohl die gespeicherten als auch die abgeleiteten Tripel berücksichtigen müssen – idealerweise mit vorberechneten (materialisierten) Schlussfolgerungen oder durch Anfrageumschreibung \cite{motik2007sparql}.
+
+\subsection{Zusammenfassung der Unterschiede}
+
+\vspace{0.5em}
+\begin{table}[h]
+\centering
+\caption{Vergleich relationaler und RDF-basierter Optimierung}
+\begin{tabular}{|p{4.5cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Aspekt} & \textbf{Relationale DB} & \textbf{RDF-Datenbank} \\
+\hline
+Datenmodell & Tabellen mit Attributen & Graph aus Tripeln \\
+Schema & festes, geschlossenes Schema & optional via Ontologie, offen \\
+Weltannahme & Closed World & Open World \\
+Abfragesprache & SQL & SPARQL \\
+Optimierung & algebraisch, kostenbasiert & heuristisch, kostenbasiert, strukturell \\
+IDB/EDB-Unterstützung & in Datalog, rekursiv möglich & durch Inferenzsysteme und OWL \\
+\hline
+\end{tabular}
+\end{table}
 
 
 \section{Fazit}

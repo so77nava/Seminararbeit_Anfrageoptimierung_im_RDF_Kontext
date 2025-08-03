@@ -2378,6 +2378,8 @@
     <bcf:citekey order="14" intorder="1">weiss2008hexastore</bcf:citekey>
     <bcf:citekey order="15" intorder="1">elzein2019materialized</bcf:citekey>
     <bcf:citekey order="16" intorder="1">tsatsanifos2012ontologies</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">perez2009semantics</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">motik2007sparql</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
