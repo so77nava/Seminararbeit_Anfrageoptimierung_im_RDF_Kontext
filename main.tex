@@ -361,6 +361,43 @@ IDB/EDB-Unterstützung & in Datalog, rekursiv möglich & durch Inferenzsysteme u
 \end{table}
 
 
+% ---------------------- Kapitel 7 ------------------------
+\section{Diskussion} \label{sec:diskussion}
+
+Die vorangegangenen Kapitel haben gezeigt, dass die Optimierung von SPARQL-Anfragen im RDF-Kontext wesentlich komplexer ist als im klassischen relationalen Umfeld. In der Diskussion sollen zentrale Herausforderungen nochmals kritisch beleuchtet, offene Problemfelder aufgezeigt und die praktischen Implikationen dieser Unterschiede eingeordnet werden.
+
+\subsection{Grenzen klassischer Optimierung im semantischen Kontext}
+
+Ein zentrales Ergebnis ist, dass viele bewährte Optimierungsprinzipien aus der relationalen Welt – insbesondere kostenbasierte Modelle, algebraische Transformationen und Indexstrategien – zwar grundsätzlich übertragbar, aber im RDF-Kontext nicht ohne Anpassungen wirksam sind. Der entscheidende Unterschied liegt im Datenmodell: Während relationale Daten durch ein festes Schema klar strukturiert sind, folgt RDF einem offenen, flexiblen und semantisch angereicherten Graphmodell.
+
+Diese Offenheit wirkt sich negativ auf die Planbarkeit aus: Ohne verbindliche Kardinalitäten, eindeutige Schlüsselkandidaten oder vollständige Wertverteilungen lassen sich kaum präzise Kostenmodelle erstellen. Dies betrifft insbesondere komplexe SPARQL-Anfragen mit UNION, OPTIONAL oder FILTER-Klauseln. Die im RDF-Umfeld notwendige Trennung zwischen syntaktischer Anfrage und semantischer Interpretation erschwert zusätzlich die Anwendung herkömmlicher Optimierungstechniken \cite{nourie2021survey}.
+
+\subsection{Bedeutung von Inferenz und OWA}
+
+Ein weiterer Aspekt, der Optimierungsverfahren fundamental beeinflusst, ist die Open World Assumption. Inferenzmechanismen, wie sie über OWL oder RDFS realisiert werden, erzeugen zur Laufzeit neue Fakten, die nicht explizit in den Rohdaten enthalten sind. Optimierer müssen daher nicht nur gespeicherte Daten, sondern auch potenziell ableitbare Informationen berücksichtigen – entweder durch Materialisierung oder dynamisches Rewriting.
+
+Dieser Umstand führt zu einer Verschiebung der Komplexität: Statt die Anfrageausführung zu beschleunigen, muss der Optimierer entscheiden, welche Teile der Anfrage durch Regeln erweitert werden können oder müssen. Je größer die Ontologie, desto höher ist die Gefahr einer exponentiellen Explosion des Anfragebaums \cite{tsatsanifos2012ontologies}. In der Praxis führt dies dazu, dass viele Systeme Inferenz auf bestimmte Profile beschränken (z.\,B. OWL RL), um Optimierbarkeit zu gewährleisten.
+
+\subsection{Praktische Relevanz vs. Forschungskomplexität}
+
+Obwohl viele der genannten Optimierungsprobleme in der Forschung ausführlich analysiert wurden, zeigt sich in der Praxis ein oft starker Kontrast: Produktionssysteme wie Virtuoso, Blazegraph oder GraphDB setzen meist auf pragmatische Hybridlösungen aus Heuristiken, einfachen Statistiken und Caching. Vollständige Ontologie-Reasoner oder kostenbasierte Multistrategie-Optimierer sind selten implementiert oder nur in akademischen Prototypen zu finden.
+
+Dies verdeutlicht die bestehende Lücke zwischen theoretisch möglichen Verfahren und praktisch einsatzfähigen Lösungen. Gründe dafür liegen in der Skalierungsproblematik, der mangelnden Standardisierung und den oft stark domänenspezifischen Datenstrukturen im Semantic Web.
+
+\subsection{Offene Forschungsfragen}
+
+Trotz zahlreicher Beiträge bleiben wesentliche Fragen offen. Dazu zählen:
+\begin{itemize}
+    \item Wie lassen sich Kardinalitätsschätzungen bei schemalosen RDF-Daten zuverlässiger gestalten?
+    \item Welche Rolle können lernbasierte Optimierer (z.\,B. via Reinforcement Learning oder Graph-Neural-Networks) in dynamischen RDF-Umgebungen spielen?
+    \item Wie kann die Integration von Inferenz und Anfrageoptimierung effizient organisiert werden, ohne dabei auf semantische Tiefe zu verzichten?
+    \item Ist ein universell adaptierbares Kostenmodell für SPARQL realistisch oder müssen daten- bzw. domänenspezifische Modelle entwickelt werden?
+\end{itemize}
+
+Diese Fragen zeigen, dass die Anfrageoptimierung im RDF-Kontext ein aktives Forschungsfeld bleibt, in dem klassische Datenbankkonzepte zwar eine wichtige Grundlage bilden, jedoch nicht ausreichen, um die Herausforderungen semantischer Graphdaten vollständig zu bewältigen.
+
+% ---------------------- Kapitel 8 ------------------------ 
+
 \section{Fazit}
 Hier schließt du deine Arbeit ab.
 

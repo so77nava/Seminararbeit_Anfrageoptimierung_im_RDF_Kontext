@@ -2380,6 +2380,8 @@
     <bcf:citekey order="16" intorder="1">tsatsanifos2012ontologies</bcf:citekey>
     <bcf:citekey order="17" intorder="1">perez2009semantics</bcf:citekey>
     <bcf:citekey order="18" intorder="1">motik2007sparql</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">nourie2021survey</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">tsatsanifos2012ontologies</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

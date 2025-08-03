@@ -324,6 +324,42 @@
       \field{pages}{10\bibrangedash 15}
       \range{pages}{6}
     \endentry
+    \entry{nourie2021survey}{article}{}
+      \name{author}{3}{}{%
+        {{hash=e4a2ba09fd776464667da64d2917e7fa}{%
+           family={Nourie},
+           familyi={N\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=f4e5dcca8733da2069dfa5ef8a277abd}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yingjun},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=02821a48003406ef06e1ee4dfa9fca52}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Chen},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{f0415f0154ef6285e7c25484511f6f64}
+      \strng{fullhash}{f0415f0154ef6285e7c25484511f6f64}
+      \strng{bibnamehash}{f0415f0154ef6285e7c25484511f6f64}
+      \strng{authorbibnamehash}{f0415f0154ef6285e7c25484511f6f64}
+      \strng{authornamehash}{f0415f0154ef6285e7c25484511f6f64}
+      \strng{authorfullhash}{f0415f0154ef6285e7c25484511f6f64}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Transactions on Database Systems}
+      \field{number}{3}
+      \field{title}{A Survey on Query Optimization Techniques for RDF Databases}
+      \field{volume}{46}
+      \field{year}{2021}
+      \field{pages}{1\bibrangedash 45}
+      \range{pages}{45}
+    \endentry
     \entry{perez2009semantics}{article}{}
       \name{author}{3}{}{%
         {{hash=a991f832b9236d272602bb0cce8717ce}{%
