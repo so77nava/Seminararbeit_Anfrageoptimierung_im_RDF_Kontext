@@ -91,6 +91,37 @@
       \field{pages}{34\bibrangedash 43}
       \range{pages}{10}
     \endentry
+    \entry{elzein2019materialized}{article}{}
+      \name{author}{2}{}{%
+        {{hash=789a1e0270654e1d999e17a1c81f1172}{%
+           family={Elzein},
+           familyi={E\bibinitperiod},
+           given={Najib},
+           giveni={N\bibinitperiod}}}%
+        {{hash=afcea6fea5dffb083d7000f489d2a314}{%
+           family={Eiter},
+           familyi={E\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{ce4eadcb96d9504974ad3da91669f269}
+      \strng{fullhash}{ce4eadcb96d9504974ad3da91669f269}
+      \strng{bibnamehash}{ce4eadcb96d9504974ad3da91669f269}
+      \strng{authorbibnamehash}{ce4eadcb96d9504974ad3da91669f269}
+      \strng{authornamehash}{ce4eadcb96d9504974ad3da91669f269}
+      \strng{authorfullhash}{ce4eadcb96d9504974ad3da91669f269}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Semantic Web}
+      \field{number}{6}
+      \field{title}{Materialized View Maintenance for RDF Datasets}
+      \field{volume}{10}
+      \field{year}{2019}
+      \field{pages}{1051\bibrangedash 1074}
+      \range{pages}{24}
+    \endentry
     \entry{gubichev2013sparql}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=0e05974fb7be79c42dc4b1391088c31f}{%
@@ -259,6 +290,45 @@
       \field{title}{Datenbanksysteme: Eine Einführung}
       \field{year}{2022}
     \endentry
+    \entry{akhtar2019structure}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=d2274fbe986995b8ac0dabe2949b6c6f}{%
+           family={Saleem},
+           familyi={S\bibinitperiod},
+           given={Muhammad},
+           giveni={M\bibinitperiod}}}%
+        {{hash=75dec5fa9a201fbb2f0c57234deb4b3b}{%
+           family={Akhtar},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=46da789b64ffae1930e91a239b269e33}{%
+           family={Ali},
+           familyi={A\bibinitperiod},
+           given={Muhammad\bibnamedelima Intizar},
+           giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=a53ea1e67bff64c9ebe4ffbf19a852d2}{%
+           family={Ngomo},
+           familyi={N\bibinitperiod},
+           given={Axel-Cyrille\bibnamedelima Ngonga},
+           giveni={A\bibinithyphendelim C\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \strng{namehash}{302681f28f173d5a182aac87378ac13e}
+      \strng{fullhash}{f539dad893c88bfb6255c15600a05ecd}
+      \strng{bibnamehash}{302681f28f173d5a182aac87378ac13e}
+      \strng{authorbibnamehash}{302681f28f173d5a182aac87378ac13e}
+      \strng{authornamehash}{302681f28f173d5a182aac87378ac13e}
+      \strng{authorfullhash}{f539dad893c88bfb6255c15600a05ecd}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Semantic Web – ISWC 2019}
+      \field{title}{A Structural Approach for Optimizing SPARQL Queries}
+      \field{year}{2019}
+      \field{pages}{41\bibrangedash 59}
+      \range{pages}{19}
+    \endentry
     \entry{selinger1979access}{article}{}
       \name{author}{5}{}{%
         {{hash=8ea84b95531f7e9d380bf32005e7846e}{%
@@ -305,6 +375,41 @@
       \field{pages}{23\bibrangedash 34}
       \range{pages}{12}
     \endentry
+    \entry{sequeda2014cost}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d2813d1f6addd412f7ad6230200e46bc}{%
+           family={Sequeda},
+           familyi={S\bibinitperiod},
+           given={Juan\bibnamedelima F.},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=2076c60fe17dc3769696535197077f9a}{%
+           family={Hartig},
+           familyi={H\bibinitperiod},
+           given={Olaf},
+           giveni={O\bibinitperiod}}}%
+        {{hash=b7694aa6cc008ad5ae4e89ff1918f4fa}{%
+           family={Miranker},
+           familyi={M\bibinitperiod},
+           given={Daniel\bibnamedelima P.},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{fbf8a0efa2bf527eb7b961ae3f475165}
+      \strng{fullhash}{fbf8a0efa2bf527eb7b961ae3f475165}
+      \strng{bibnamehash}{fbf8a0efa2bf527eb7b961ae3f475165}
+      \strng{authorbibnamehash}{fbf8a0efa2bf527eb7b961ae3f475165}
+      \strng{authornamehash}{fbf8a0efa2bf527eb7b961ae3f475165}
+      \strng{authorfullhash}{fbf8a0efa2bf527eb7b961ae3f475165}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Web Semantics}
+      \field{title}{Cost-Based Query Rewriting for SPARQL-to-SQL Translation}
+      \field{volume}{26}
+      \field{year}{2014}
+      \field{pages}{2\bibrangedash 19}
+      \range{pages}{18}
+    \endentry
     \entry{stahl2012rdf}{article}{}
       \name{author}{2}{}{%
         {{hash=ed0743b4a82ae62e74c9461949b7ab24}{%
@@ -335,6 +440,76 @@
       \field{year}{2012}
       \field{pages}{5\bibrangedash 14}
       \range{pages}{10}
+    \endentry
+    \entry{tsatsanifos2012ontologies}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=f2e8a3a91ddc79666687f7b37744d0d2}{%
+           family={Tsatsanifos},
+           familyi={T\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=d7130dd02636da29e60f9fca1645b0f2}{%
+           family={Dalamagas},
+           familyi={D\bibinitperiod},
+           given={Theodore},
+           giveni={T\bibinitperiod}}}%
+        {{hash=467b30f5fb9a92b4096fd80175143186}{%
+           family={Sellis},
+           familyi={S\bibinitperiod},
+           given={Timos},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{47f5696d5a1232400efa3d6dd26c4da4}
+      \strng{fullhash}{47f5696d5a1232400efa3d6dd26c4da4}
+      \strng{bibnamehash}{47f5696d5a1232400efa3d6dd26c4da4}
+      \strng{authorbibnamehash}{47f5696d5a1232400efa3d6dd26c4da4}
+      \strng{authornamehash}{47f5696d5a1232400efa3d6dd26c4da4}
+      \strng{authorfullhash}{47f5696d5a1232400efa3d6dd26c4da4}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ESWC}
+      \field{title}{On the Computation of the Transitive Closure of Ontologies}
+      \field{year}{2012}
+      \field{pages}{154\bibrangedash 168}
+      \range{pages}{15}
+    \endentry
+    \entry{weiss2008hexastore}{article}{}
+      \name{author}{3}{}{%
+        {{hash=14dd29fc1d7fd4db42f4f3d7849429c8}{%
+           family={Weiss},
+           familyi={W\bibinitperiod},
+           given={Christoph},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1c5b83cefd7033a528994276b9c00e87}{%
+           family={Georgiev},
+           familyi={G\bibinitperiod},
+           given={Petko},
+           giveni={P\bibinitperiod}}}%
+        {{hash=88f4d8f5816512d21305d7ed8265d764}{%
+           family={Bernstein},
+           familyi={B\bibinitperiod},
+           given={Abraham},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{12e4ffea5b69cccd8ed6fd97a12c3a13}
+      \strng{fullhash}{12e4ffea5b69cccd8ed6fd97a12c3a13}
+      \strng{bibnamehash}{12e4ffea5b69cccd8ed6fd97a12c3a13}
+      \strng{authorbibnamehash}{12e4ffea5b69cccd8ed6fd97a12c3a13}
+      \strng{authornamehash}{12e4ffea5b69cccd8ed6fd97a12c3a13}
+      \strng{authorfullhash}{12e4ffea5b69cccd8ed6fd97a12c3a13}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the VLDB Endowment}
+      \field{number}{1}
+      \field{title}{Hexastore: Sextuple Indexing for Semantic Web Data Management}
+      \field{volume}{1}
+      \field{year}{2008}
+      \field{pages}{1008\bibrangedash 1019}
+      \range{pages}{12}
     \endentry
     \entry{wylot2018rdf}{article}{}
       \name{author}{4}{}{%
@@ -376,6 +551,40 @@
       \field{year}{2018}
       \field{pages}{1\bibrangedash 36}
       \range{pages}{36}
+    \endentry
+    \entry{yuan2015heuristics}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=1ce4eb84b8441cb4f47e328910e194f7}{%
+           family={Yuan},
+           familyi={Y\bibinitperiod},
+           given={Bo},
+           giveni={B\bibinitperiod}}}%
+        {{hash=d0ef8992108e033f04b913f0bc6c844d}{%
+           family={Bao},
+           familyi={B\bibinitperiod},
+           given={Zhifeng},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=f73d8522320e5247ad8b769ddd437e0c}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={J.\bibnamedelimi X.},
+           giveni={J\bibinitperiod\bibinitdelim X\bibinitperiod}}}%
+      }
+      \strng{namehash}{283dd86e74fa97f08fd9c89f761a64f8}
+      \strng{fullhash}{283dd86e74fa97f08fd9c89f761a64f8}
+      \strng{bibnamehash}{283dd86e74fa97f08fd9c89f761a64f8}
+      \strng{authorbibnamehash}{283dd86e74fa97f08fd9c89f761a64f8}
+      \strng{authornamehash}{283dd86e74fa97f08fd9c89f761a64f8}
+      \strng{authorfullhash}{283dd86e74fa97f08fd9c89f761a64f8}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Web Information Systems Engineering (WISE)}
+      \field{title}{Effective Heuristics-Based SPARQL Query Optimization}
+      \field{year}{2015}
+      \field{pages}{227\bibrangedash 241}
+      \range{pages}{15}
     \endentry
     \entry{ycy2015}{article}{}
       \name{author}{3}{}{%

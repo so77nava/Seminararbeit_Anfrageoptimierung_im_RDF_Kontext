@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1754238187.46863 "main.bcf" "main.bbl" "main" 1754238195.31885 0
-  "literatur.bib" 1754238182 3428 523f2fe0850c1308744570e3aeaf5a8d ""
-  "main.bcf" 1754238195 108498 f14783248789662040ac7066116d1a4f "pdflatex"
+["biber main"] 1754240149.40049 "main.bcf" "main.bbl" "main" 1754240155.85032 0
+  "literatur.bib" 1754240145 5101 8fbeb4b4f9abebb3161db21cbe3c07a0 ""
+  "main.bcf" 1754240155 108951 90113ad1fcc5fc99310785295abccf5a "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1754238193.57254 "e:/Master/Semester 3/Seminar Web Sementic/Latex_Quellcoden/main.tex" "main.pdf" "main" 1754238195.32115 0
+["pdflatex"] 1754240154.45274 "e:/Master/Semester 3/Seminar Web Sementic/Latex_Quellcoden/main.tex" "main.pdf" "main" 1754240155.85105 0
   "C:/Users/Ouabo Jordan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1754232757 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Ouabo Jordan/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1754233664 14064 7962abd5d580f8b2d705190748c6000b ""
   "C:/Users/Ouabo Jordan/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1754232688 24228385 89b1a59ee2d0126561f313bdc2347583 ""
@@ -90,12 +90,12 @@
   "C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.def" 1280941015 1620 fb1c32b818f2058eca187e5c41dfae77 ""
   "C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.sty" 1280941015 6187 b27afc771af565d3a9ff1ca7d16d0d46 ""
   "C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "e:/Master/Semester 3/Seminar Web Sementic/Latex_Quellcoden/main.tex" 1754238182 18852 05d9b6ec0976f1c0dfda53e492a69d56 ""
-  "main.aux" 1754238195 4975 4f11e1c1c6461235ad010d8cb7d607c4 "pdflatex"
-  "main.bbl" 1754238190 16845 739ba645d1745a23d5b1ea055edd11b1 "biber main"
-  "main.run.xml" 1754238195 2334 1b5b1514c9fec959a0c2940f259774d3 "pdflatex"
-  "main.tex" 1754238182 18852 05d9b6ec0976f1c0dfda53e492a69d56 ""
-  "main.toc" 1754238195 1817 10800284e31556a142d9e478ebd61c0c "pdflatex"
+  "e:/Master/Semester 3/Seminar Web Sementic/Latex_Quellcoden/main.tex" 1754240145 25808 3ea893bed71ae9804444b6a896004fef ""
+  "main.aux" 1754240155 7289 3b08d5eea9782dc32ceb562dae541108 "pdflatex"
+  "main.bbl" 1754240151 25815 a8e5287c914c94853e8b746e0de26349 "biber main"
+  "main.run.xml" 1754240155 2334 1b5b1514c9fec959a0c2940f259774d3 "pdflatex"
+  "main.tex" 1754240145 25808 3ea893bed71ae9804444b6a896004fef ""
+  "main.toc" 1754240155 2538 4663d7be7424b5ecf7f6811c28296ae9 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"

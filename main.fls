@@ -168,9 +168,9 @@ INPUT C:\Users\Ouabo Jordan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cm
 INPUT C:\Users\Ouabo Jordan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
 INPUT C:\Users\Ouabo Jordan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
 INPUT C:\Users\Ouabo Jordan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-OUTPUT main.toc
 OUTPUT main.pdf
 INPUT C:\Users\Ouabo Jordan\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+OUTPUT main.toc
 INPUT C:\Users\Ouabo Jordan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 INPUT C:\Users\Ouabo Jordan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Ouabo Jordan\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm

@@ -213,6 +213,85 @@ Blank Nodes – also Ressourcen ohne URI – erschweren das Identifizieren und J
 Named Graphs wiederum erlauben die Gruppierung von Tripeln in kontextuelle Teilgraphen. Zwar bietet dies konzeptionelle Vorteile (z.\,B. zur Provenienz oder Versionierung), doch führt dies in der Optimierung zu zusätzlichem Planungsaufwand, da Anfragen graphübergreifend analysiert werden müssen.
 
 % ---------------------- Kapitel 5 ------------------------
+\section{Optimierungsansätze im RDF-Kontext} \label{sec:ansaetze}
+
+Angesichts der strukturellen und semantischen Herausforderungen von RDF-Datenbanken wurden in den letzten Jahren zahlreiche Optimierungsstrategien entwickelt, die speziell auf die Besonderheiten graphbasierter Datenmodelle zugeschnitten sind. Einige davon orientieren sich an Prinzipien aus der relationalen Welt, andere greifen auf neue Konzepte zurück. Dieses Kapitel gibt einen systematischen Überblick über zentrale Optimierungsmethoden und ordnet sie in Bezug auf ihre Einsatzbedingungen und Wirksamkeit ein.
+
+\subsection{Heuristikbasierte Optimierung}
+
+Viele RDF-Engines, insbesondere Open-Source-Systeme wie Apache Jena oder Eclipse RDF4J (ehemals Sesame), implementieren heuristische Optimierungen, um typische Anfragen effizienter zu verarbeiten. Dabei kommen einfache Regeln zum Einsatz, die unabhängig von detaillierten Statistiken funktionieren.
+
+Ein zentrales Prinzip ist die Reorganisation der Tripelpattern: Selektive Muster – also solche mit häufigen Konstanten oder spezifischen Prädikaten – werden möglichst weit vorne im Anfragebaum verarbeitet. Dadurch kann die Bindungsmenge früh reduziert werden, was sich auf nachfolgende Joins positiv auswirkt. Ebenfalls etabliert ist der sogenannte \textit{Filter Pushdown}, bei dem FILTER-Ausdrücke so nah wie möglich an die Datensätze verschoben werden, auf die sie sich beziehen \cite{yuan2015heuristics}.
+
+Ein typisches Beispiel ist die Umstrukturierung folgender Anfrage:
+
+\begin{lstlisting}[caption=Unoptimierte vs. heuristisch optimierte Reihenfolge von Tripeln]
+# Unoptimiert:
+?x dbo:birthPlace ?place .
+?x rdf:type dbo:Person .
+?x foaf:name ?name .
+
+# Optimiert:
+?x rdf:type dbo:Person .
+?x foaf:name ?name .
+?x dbo:birthPlace ?place .
+\end{lstlisting}
+
+Hierbei wird angenommen, dass `rdf:type` eine stark selektive Einschränkung darstellt und daher zuerst evaluiert werden sollte.
+
+\subsection{Kostenbasierte Optimierung}
+
+Komplexere RDF-Datenbanken wie Virtuoso oder Blazegraph nutzen kostenbasierte Optimierer, die verschiedene Anfragepläne bewerten und auf Basis geschätzter Ausführungskosten den effizientesten Plan wählen. Ähnlich wie in relationalen Systemen stützt sich dieser Prozess auf Statistiken über Prädikatsverteilungen, Kardinalitäten und Wertfrequenzen \cite{sequeda2014cost}.
+
+Besonderheiten ergeben sich jedoch aus der Struktur der Daten: RDF-Prädikate verhalten sich nicht wie feste Spalten, sondern können sehr unterschiedlich interpretiert und verteilt sein. Moderne Systeme greifen daher zu Hybridstrategien, bei denen heuristische Vorauswahl mit statistischer Bewertung kombiniert wird.
+
+Ein Beispiel ist die Abfrage nach allen Akteuren eines Films, bei der JOINs über `dbo:starring`, `dbo:director`, `dbo:releaseDate` und weitere Prädikate erforderlich sind. Ein Optimierer wählt dabei nicht nur die Join-Reihenfolge, sondern berücksichtigt auch, welche Teilpläne potenziell hohe Kosten verursachen (z.\,B. bei großen Bindungsräumen oder UNION-Konstrukten).
+
+\subsection{Strukturbasierte Optimierung nach Graphmustern}
+
+Neuere Forschungsarbeiten klassifizieren SPARQL-Anfragen nach ihrer strukturellen Form – z.\,B. als Sterne (ein zentrales Subjekt mit mehreren Prädikaten), Pfade (verkettete Prädikate), Bäume oder Zyklen. Diese Muster lassen sich nutzen, um Anfragen gezielt zu zerschneiden oder zusammenzufassen.
+
+Ein Sternmuster wie:
+
+\begin{lstlisting}[caption=Sternförmiges SPARQL-Muster]
+?person foaf:name ?name ;
+        dbo:birthDate ?birth ;
+        dbo:deathDate ?death ;
+        dbo:occupation ?job .
+\end{lstlisting}
+
+ermöglicht die Bündelung der Prädikate in sogenannten \textit{Property Tables} oder erlaubt parallele Verarbeitung durch semantisches Partitionieren \cite{akhtar2019structure}. Für Pfade wiederum kann ein sogenannter \textit{Path Index} erzeugt werden, der häufige Prädikatssequenzen vorab berechnet und indiziert.
+
+\subsection{Speicherstruktur und physische Repräsentation}
+
+Die physische Speicherung hat erheblichen Einfluss auf die Effizienz der Anfrageverarbeitung. Während einfache RDF-Systeme eine klassische Tripel-Tabelle (Subjekt, Prädikat, Objekt) nutzen, greifen optimierte Systeme auf spezialisierte Layouts zurück:
+
+\begin{itemize}
+    \item \textbf{Vertical Partitioning:} Eine separate Tabelle je Prädikat. Vorteilhaft für selektive Prädikatsanfragen, jedoch Join-intensiv.
+    \item \textbf{Property Tables:} Gruppierung häufig gemeinsam auftretender Prädikate in eine Zeile – ähnlich einer relationalen Projektion.
+    \item \textbf{Hexastore:} Speicherung aller sechs Permutationen von SPO (z.\,B. POS, OSP etc.), um beliebige Zugriffsmuster effizient zu unterstützen \cite{weiss2008hexastore}.
+\end{itemize}
+
+Die Wahl der Speicherstruktur beeinflusst unmittelbar die Indexierung, Join-Kosten und Parallelisierbarkeit.
+
+\subsection{Kompilierung in relationale Ausführungspläne}
+
+Einige Systeme nutzen sogenannte R2RML-Mappings, um RDF-Daten auf relationale Strukturen abzubilden. SPARQL-Anfragen werden dabei in SQL überführt, sodass bestehende relationale Optimierer (z.\,B. aus PostgreSQL) genutzt werden können. Voraussetzung ist jedoch eine wohldefinierte Ontologie oder Mapping-Tabelle. Beispiele für derartige Systeme sind Ontop oder D2RQ.
+
+Vorteilhaft ist dabei die Wiederverwendbarkeit bewährter SQL-Techniken; allerdings leidet die Flexibilität bei der Abbildung komplexer RDF-Graphenstrukturen.
+
+\subsection{Materialisierung und Vorberechnung}
+
+Zur Verbesserung der Performance bei häufigen Abfragen kommen in RDF-Systemen zunehmend materialisierte Views zum Einsatz. Dabei handelt es sich um vorab berechnete Antwortmengen oder Teilergebnisse, die zur Laufzeit direkt verwendet werden können. Insbesondere bei bekannten Mustern – etwa rekursiven Beziehungen oder häufigen Joinketten – lohnt sich die Vorberechnung \cite{elzein2019materialized}.
+
+Alternativ können semantische Indizes über Subklassen, Subproperties oder Instanzen erzeugt werden, um Inferenzkosten zur Laufzeit zu vermeiden.
+
+\subsection{Ontologiebasierte Anfrageumschreibung}
+
+Schließlich ermöglichen Ontologien eine semantische Erweiterung der Anfrageverarbeitung. In sogenannten \textit{ontology-aware systems} werden SPARQL-Anfragen automatisch um Regeln ergänzt, die sich aus OWL-Axiomen ableiten. Beispielsweise kann bei einer Anfrage nach `dbo:University` auch nach Subklassen wie `dbo:TechnicalUniversity` gesucht werden, ohne dass dies explizit formuliert wurde \cite{tsatsanifos2012ontologies}.
+
+Problematisch ist jedoch, dass komplexe Ontologien zu einer exponentiellen Erweiterung des Anfragebaums führen können, was die Optimierung massiv erschwert. In der Praxis ist daher häufig eine Mischung aus statischer Inferenz (Materialisierung) und dynamischer Umschreibung (Rewriting) anzutreffen.
+
 
 
 \section{Fazit}
