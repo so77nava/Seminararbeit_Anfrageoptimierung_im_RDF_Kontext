@@ -398,8 +398,32 @@ Diese Fragen zeigen, dass die Anfrageoptimierung im RDF-Kontext ein aktives Fors
 
 % ---------------------- Kapitel 8 ------------------------ 
 
-\section{Fazit}
-Hier schließt du deine Arbeit ab.
+\section{Fazit und Ausblick} \label{sec:fazit}
+
+Ziel dieser Arbeit war es, einen systematischen Überblick über Optimierungsstrategien für SPARQL-Anfragen im RDF-Kontext zu geben und diese mit klassischen Konzepten der relationalen Anfrageverarbeitung zu vergleichen. Ausgangspunkt war die Beobachtung, dass RDF-basierte Systeme aufgrund ihrer semistrukturierten, schemalosen und semantisch offenen Natur erheblich komplexere Anforderungen an die Anfrageoptimierung stellen als relationale Datenbanksysteme.
+
+Im Verlauf der Analyse zeigte sich, dass viele Prinzipien aus der relationalen Optimierung – wie Join-Reihenfolgenplanung, Filter-Pushdown, oder kostenbasierte Auswahl von Ausführungsplänen – grundsätzlich übertragbar sind. Ihre konkrete Umsetzung im RDF-Umfeld erfordert jedoch erhebliche Anpassungen. Besonders herausfordernd sind die fehlenden Schemainformationen, die hohe Joindichte selbst einfacher SPARQL-Anfragen und die offene Weltannahme, die klassische Optimierungsmuster teilweise außer Kraft setzt.
+
+Die untersuchten Optimierungsansätze reichen von einfachen Heuristiken über struktur- und kostenbasierte Verfahren bis hin zu semantikbasierten Techniken wie Inferenzumschreibungen und Vorberechnungen. Systeme wie Virtuoso, Blazegraph oder Apache Jena nutzen in der Praxis meist hybride Verfahren, um zwischen Effizienz, Vollständigkeit und semantischer Korrektheit zu balancieren.
+
+Der Vergleich mit klassischen Optimierungskonzepten hat gezeigt, dass RDF-Systeme trotz konzeptioneller Unterschiede viele bewährte Methoden adaptieren können – etwa in Form von SPARQL-Algebren, statischer Indexierung oder materialisierter Views. Das IDB/EDB-Konzept findet sich in der Trennung zwischen gespeicherten und abgeleiteten Tripeln wieder, etwa durch OWL-Inferenz oder Regelanwendungen. Dennoch bleibt die Optimierung im RDF-Kontext deutlich stärker von Kontext, Ontologieumfang und Anwendungsdomäne abhängig.
+
+\subsection*{Ausblick}
+
+Die Anfrageoptimierung im RDF-Kontext bleibt ein hochaktuelles und herausforderndes Forschungsfeld. Insbesondere folgende Entwicklungslinien erscheinen vielversprechend:
+
+\begin{itemize}
+    \item \textbf{Lernbasierte Optimierung:} Der Einsatz von Machine-Learning-Ansätzen zur Kardinalitätsschätzung, Join-Reihenfolgenbestimmung und Planvorhersage könnte bestehende Heuristiken ergänzen oder ersetzen.
+    
+    \item \textbf{Adaptive Systeme:} Zukünftige RDF-Engines sollten in der Lage sein, sich automatisch an neue Datenstrukturen und Anfrageprofile anzupassen – etwa durch kontinuierliches Feedback oder Workload-Analysen.
+    
+    \item \textbf{Inferenz-aware Optimization:} Die enge Verzahnung von semantischer Schlussfolgerung und Anfrageplanung könnte optimiert werden, etwa durch hybride Ansätze aus Materialisierung und dynamischem Rewriting.
+    
+    \item \textbf{Standardisierung und Benchmarking:} Vergleichbare, realistische Benchmarks für SPARQL-Optimierung sind essenziell, um neue Ansätze systematisch evaluieren zu können.
+\end{itemize}
+
+Langfristig wird die semantische Datenverarbeitung nur dann skalierbar und praxistauglich sein, wenn Anfrageoptimierung nicht als rein technisches Problem, sondern als integraler Bestandteil semantischer Datenmodellierung verstanden wird.
+
 
 \printbibliography
 
