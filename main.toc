@@ -12,5 +12,11 @@
 \contentsline {subsection}{\numberline {3.3}SPARQL: Abfragesprache für RDF}{6}{}%
 \contentsline {subsection}{\numberline {3.4}Anfrageverarbeitung in RDF-Datenbanken}{7}{}%
 \contentsline {subsection}{\numberline {3.5}Technische Besonderheiten RDF-basierter Systeme}{7}{}%
-\contentsline {section}{\numberline {4}Hauptteil}{8}{}%
-\contentsline {section}{\numberline {5}Fazit}{8}{}%
+\contentsline {section}{\numberline {4}Optimierungsprobleme in RDF-Datenbanken}{8}{}%
+\contentsline {subsection}{\numberline {4.1}Fehlende Schemata und begrenzte Ontologien}{8}{}%
+\contentsline {subsection}{\numberline {4.2}Hohe Joindichte bei einfachen Anfragen}{8}{}%
+\contentsline {subsection}{\numberline {4.3}Fehlende Kardinalitätsabschätzungen}{9}{}%
+\contentsline {subsection}{\numberline {4.4}Einfluss der Open World Assumption (OWA)}{9}{}%
+\contentsline {subsection}{\numberline {4.5}Komplexe SPARQL-Konstrukte: OPTIONAL, FILTER, UNION}{9}{}%
+\contentsline {subsection}{\numberline {4.6}Strukturelle Probleme: Blank Nodes und Named Graphs}{10}{}%
+\contentsline {section}{\numberline {5}Fazit}{10}{}%

@@ -91,6 +91,66 @@
       \field{pages}{34\bibrangedash 43}
       \range{pages}{10}
     \endentry
+    \entry{gubichev2013sparql}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=0e05974fb7be79c42dc4b1391088c31f}{%
+           family={Gubichev},
+           familyi={G\bibinitperiod},
+           given={Andrey},
+           giveni={A\bibinitperiod}}}%
+        {{hash=856106a72d787bcea4281fca718cd7d7}{%
+           family={Neumann},
+           familyi={N\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{801b0b8aaa72d89ebb6c05243981aa3b}
+      \strng{fullhash}{801b0b8aaa72d89ebb6c05243981aa3b}
+      \strng{bibnamehash}{801b0b8aaa72d89ebb6c05243981aa3b}
+      \strng{authorbibnamehash}{801b0b8aaa72d89ebb6c05243981aa3b}
+      \strng{authornamehash}{801b0b8aaa72d89ebb6c05243981aa3b}
+      \strng{authorfullhash}{801b0b8aaa72d89ebb6c05243981aa3b}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Management of Data (SIGMOD)}
+      \field{title}{Explaining RDF Query Results}
+      \field{year}{2013}
+      \field{pages}{245\bibrangedash 256}
+      \range{pages}{12}
+    \endentry
+    \entry{harth2010sparqling}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c825103009ba7f981a3bc9ecebf016d3}{%
+           family={Harth},
+           familyi={H\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2a1e6ec26f3229ee6817fdc4087dc2b0}{%
+           family={Decker},
+           familyi={D\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{a925b4e67aaa3f0f4aa77958127a2b1a}
+      \strng{fullhash}{a925b4e67aaa3f0f4aa77958127a2b1a}
+      \strng{bibnamehash}{a925b4e67aaa3f0f4aa77958127a2b1a}
+      \strng{authorbibnamehash}{a925b4e67aaa3f0f4aa77958127a2b1a}
+      \strng{authornamehash}{a925b4e67aaa3f0f4aa77958127a2b1a}
+      \strng{authorfullhash}{a925b4e67aaa3f0f4aa77958127a2b1a}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Web Semantics: Science, Services and Agents on the World Wide Web}
+      \field{number}{2}
+      \field{title}{Optimized Index Structures for Querying RDF from the Web}
+      \field{volume}{7}
+      \field{year}{2010}
+      \field{pages}{113\bibrangedash 130}
+      \range{pages}{18}
+    \endentry
     \entry{hogan2021knowledge}{article}{}
       \name{author}{11}{}{%
         {{hash=56f2d88e83f41f6e1f0d9a0197c4c7eb}{%
@@ -244,6 +304,37 @@
       \field{year}{1979}
       \field{pages}{23\bibrangedash 34}
       \range{pages}{12}
+    \endentry
+    \entry{stahl2012rdf}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ed0743b4a82ae62e74c9461949b7ab24}{%
+           family={Stahl},
+           familyi={S\bibinitperiod},
+           given={Christoph},
+           giveni={C\bibinitperiod}}}%
+        {{hash=84bd98f47410a9391bb8a9a2943d5c6b}{%
+           family={Decker},
+           familyi={D\bibinitperiod},
+           given={Gero},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{196fd84aad67980c0c00aa092c83929f}
+      \strng{fullhash}{196fd84aad67980c0c00aa092c83929f}
+      \strng{bibnamehash}{196fd84aad67980c0c00aa092c83929f}
+      \strng{authorbibnamehash}{196fd84aad67980c0c00aa092c83929f}
+      \strng{authornamehash}{196fd84aad67980c0c00aa092c83929f}
+      \strng{authorfullhash}{196fd84aad67980c0c00aa092c83929f}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Datenbank-Spektrum}
+      \field{number}{1}
+      \field{title}{Cost-based Query Optimization for SPARQL}
+      \field{volume}{12}
+      \field{year}{2012}
+      \field{pages}{5\bibrangedash 14}
+      \range{pages}{10}
     \endentry
     \entry{wylot2018rdf}{article}{}
       \name{author}{4}{}{%

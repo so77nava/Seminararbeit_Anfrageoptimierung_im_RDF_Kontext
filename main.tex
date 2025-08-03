@@ -26,6 +26,7 @@
 \tableofcontents
 \newpage
 
+% ---------------------- Kapitel 1 ------------------------
 \section{Einleitung}
 
 Das World Wide Web hat sich in den letzten Jahrzehnten grundlegend gewandelt: Von einer rein hypertextbasierten Dokumentensammlung hin zu einem semantisch vernetzten Informationsraum, der nicht nur für Menschen, sondern auch für Maschinen interpretierbar ist. Diese Entwicklung mündet in der Vision des \textit{Semantic Web}, wie sie von Berners-Lee formuliert wurde – ein Web, in dem Daten nicht nur dargestellt, sondern auch verarbeitet und logisch verknüpft werden können \cite{berners2001semantic}.
@@ -38,7 +39,7 @@ Die klassische Datenbankforschung – etwa wie sie von Kemper und Eickler beschr
 
 Ziel dieser Seminararbeit ist es, einen systematischen Überblick über Optimierungsstrategien im RDF-Kontext zu geben. Dazu werden zunächst die Grundlagen der relationalen Anfrageverarbeitung (Kapitel~\ref{sec:relational}) vorgestellt und mit dem RDF-Datenmodell und SPARQL verglichen (Kapitel~\ref{sec:rdf}). Darauf aufbauend werden die spezifischen Optimierungsprobleme und -ansätze in RDF-Datenbanken analysiert (Kapitel~\ref{sec:probleme} und~\ref{sec:ansaetze}). Abschließend erfolgt eine vergleichende Einordnung klassischer und semantischer Optimierungsprinzipien (Kapitel~\ref{sec:vergleich}) sowie eine kritische Diskussion aktueller Limitationen und zukünftiger Forschungsfragen (Kapitel~\ref{sec:diskussion} und~\ref{sec:fazit}).
 
-
+% ---------------------- Kapitel 2 ------------------------
 
 \section{Grundlagen relationaler Anfrageverarbeitung}
 
@@ -165,9 +166,54 @@ Im Gegensatz zu relationalen Datenbanken setzen RDF-Systeme auf spezielle Speich
 
 Diese Strukturen bestimmen maßgeblich die Optimierbarkeit von SPARQL-Anfragen und beeinflussen sowohl den Planungsaufwand als auch die Ausführungsgeschwindigkeit.
 
+% ---------------------- Kapitel 4 ------------------------
+\section{Optimierungsprobleme in RDF-Datenbanken} \label{sec:probleme}
 
-\section{Hauptteil}
-Zum Beispiel: RDF basiert auf Tripeln.
+Im Vergleich zu klassischen relationalen Datenbanksystemen stellt das RDF-Datenmodell die Anfrageoptimierung vor neuartige Herausforderungen. Diese resultieren sowohl aus der schemalosen und semistrukturierten Natur von RDF als auch aus der offenen Semantik, wie sie durch die Open World Assumption (OWA) definiert wird. In diesem Kapitel werden zentrale Optimierungsprobleme analysiert, die bei der Ausführung von SPARQL-Anfragen in RDF-Datenbanken typischerweise auftreten.
+
+\subsection{Fehlende Schemata und begrenzte Ontologien}
+
+RDF-Datenbanken verfügen typischerweise über kein fixes, global definiertes Schema. Im Gegensatz zu relationalen Datenbanken, in denen die Struktur der Daten über Tabellen- und Attributdefinitionen klar vorgegeben ist, liegt RDF-Daten meist keine explizite Schemadefinition zugrunde. Zwar können optionale semantische Erweiterungen durch Ontologien in RDFS oder OWL eingebunden werden, doch sind diese in der Praxis häufig zu generisch, unvollständig oder nicht konsistent gepflegt. Dadurch fehlen dem Optimierer wesentliche Informationen, etwa über Kardinalitäten, Schlüssel oder Typverteilungen \cite{harth2010sparqling}.
+
+\subsection{Hohe Joindichte bei einfachen Anfragen}
+
+Ein charakteristisches Merkmal von SPARQL-Anfragen ist ihre Joindichte: Selbst einfache Informationsabfragen bestehen aus mehreren Tripelmustern, die über Variablen verknüpft sind. So entspricht z.\,B. eine Abfrage wie „Welche Autoren haben Bücher veröffentlicht, die 2020 erschienen sind?“ bereits einem mehrstufigen Join über die Tripel \texttt{(?book dc:creator ?author)}, \texttt{(?book dc:date ?year)} und \texttt{FILTER (?year = 2020)}. In relationalen Datenbanken könnten solche Informationen in einer einzigen, gut indizierten Tabelle abgefragt werden, während RDF-Systeme mehrere Tripelrelationen verbinden müssen.
+
+Die effiziente Bestimmung der optimalen Join-Reihenfolge ist bei hoher Joindichte besonders anspruchsvoll, da die Anzahl möglicher Join-Bäume exponentiell mit der Anzahl der Tripelpattern wächst \cite{gubichev2013sparql}.
+
+\subsection{Fehlende Kardinalitätsabschätzungen}
+
+Ein zentrales Problem bei der Optimierung ist die fehlende oder ungenaue Schätzung der Kardinalitäten einzelner Tripelpattern. Während relationale Optimierer häufig auf detaillierte Statistiken über Werteverteilungen, Indizes und Histogramme zurückgreifen können, sind entsprechende Metainformationen in RDF-Systemen selten vorhanden oder ungenau. Dies liegt u.\,a. an der extrem heterogenen Nutzung von Prädikaten und an der typischen „long tail“-Verteilung von Vokabularen – viele Prädikate treten sehr selten auf, während wenige sehr häufig vorkommen \cite{stahl2012rdf}.
+
+Falsche Kardinalitätsschätzungen führen in kostenbasierten Optimierern regelmäßig zu suboptimalen Ausführungsplänen, insbesondere bei mehrfach geschachtelten Joins oder OPTIONAL-Konstrukten.
+
+\subsection{Einfluss der Open World Assumption (OWA)}
+
+Die OWA wirkt sich fundamental auf Optimierungsstrategien aus. Da das Fehlen einer Aussage nicht bedeutet, dass sie falsch ist, sind Optimierungen wie Filter-Pushdown, Join-Eliminierung oder Ergebnisvorhersage nur eingeschränkt anwendbar. Besonders bei OPTIONAL-Blöcken ist die semantische Bedeutung komplex: Das Weglassen eines Tripels kann valide sein, auch wenn dadurch keine vollständige Bindung entsteht. Optimierer müssen also Worst-Case-Szenarien einkalkulieren, was zu konservativen und ineffizienten Plänen führen kann.
+
+\subsection{Komplexe SPARQL-Konstrukte: OPTIONAL, FILTER, UNION}
+
+SPARQL bietet mit Konstrukten wie \texttt{OPTIONAL}, \texttt{FILTER} und \texttt{UNION} mächtige Ausdrucksmittel, die jedoch die Optimierung erheblich erschweren. OPTIONAL erzeugt implizit einen left outer join, wodurch bestimmte Join-Reihenfolgen ausgeschlossen werden. FILTER-Ausdrücke, insbesondere wenn sie auf BIND-Ergebnisse oder externe Funktionen zugreifen, lassen sich häufig nicht vorziehen oder aufteilen. UNIONs hingegen führen zu mehrfachen Teilplänen mit potenziell überlappenden Ergebnissen.
+
+Ein einfaches Beispiel ist eine Anfrage nach Geburtsdaten oder Sterbedaten prominenter Persönlichkeiten:
+
+\begin{lstlisting}[caption=Beispiel: OPTIONAL-Abfrage in SPARQL]
+SELECT ?person ?birth ?death WHERE {
+  ?person dbo:birthDate ?birth .
+  OPTIONAL { ?person dbo:deathDate ?death . }
+}
+\end{lstlisting}
+
+Ein naiver Optimierer könnte das OPTIONAL-Muster ungünstig an den Anfang des Ausführungsplans setzen, was zu deutlich schlechterer Performance führt.
+
+\subsection{Strukturelle Probleme: Blank Nodes und Named Graphs}
+
+Blank Nodes – also Ressourcen ohne URI – erschweren das Identifizieren und Joins über Entitäten. Da sie nicht global referenzierbar sind, müssen sie intern durch systemgenerierte Identifikatoren ersetzt werden. Dies erschwert insbesondere Inferenzmechanismen und die Nachverfolgbarkeit von Aussagen.
+
+Named Graphs wiederum erlauben die Gruppierung von Tripeln in kontextuelle Teilgraphen. Zwar bietet dies konzeptionelle Vorteile (z.\,B. zur Provenienz oder Versionierung), doch führt dies in der Optimierung zu zusätzlichem Planungsaufwand, da Anfragen graphübergreifend analysiert werden müssen.
+
+% ---------------------- Kapitel 5 ------------------------
+
 
 \section{Fazit}
 Hier schließt du deine Arbeit ab.

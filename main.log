@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.3)  3 AUG 2025 18:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.3)  3 AUG 2025 18:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -495,82 +495,119 @@ Package biblatex Info: Reference segment=0 on input line 23.
 
 {C:/Users/Ouabo Jordan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
-LaTeX Warning: Reference `sec:relational' on page 2 undefined on input line 39.
+LaTeX Warning: Reference `sec:relational' on page 2 undefined on input line 40.
 
 
-LaTeX Warning: Reference `sec:probleme' on page 2 undefined on input line 39.
+LaTeX Warning: Reference `sec:ansaetze' on page 2 undefined on input line 40.
 
 
-LaTeX Warning: Reference `sec:ansaetze' on page 2 undefined on input line 39.
+LaTeX Warning: Reference `sec:vergleich' on page 2 undefined on input line 40.
 
 
-LaTeX Warning: Reference `sec:vergleich' on page 2 undefined on input line 39.
+LaTeX Warning: Reference `sec:diskussion' on page 2 undefined on input line 40.
 
 
-LaTeX Warning: Reference `sec:diskussion' on page 2 undefined on input line 39.
-
-
-LaTeX Warning: Reference `sec:fazit' on page 2 undefined on input line 39.
+LaTeX Warning: Reference `sec:fazit' on page 2 undefined on input line 40.
 
 [2]
-Overfull \hbox (28.02426pt too wide) in paragraph at lines 52--53
+Overfull \hbox (28.02426pt too wide) in paragraph at lines 53--54
 \OT1/cmr/m/it/12 al-ge-brai-schen An-fra-ge-baum []\OT1/cmr/m/n/12 ubersetzt. Die-ser dient als in-ter-ne Re-pr[]asentation
  []
 
 
-Overfull \hbox (10.53743pt too wide) in paragraph at lines 54--55
+Overfull \hbox (10.53743pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/12 nen in ei-ne []aquivalente, aber ef-fi-zi-en-ter aus-zuf[]uhrende Va-ri-an-te []uberf[]uhrt.
  []
 
 
-Overfull \hbox (48.43092pt too wide) in paragraph at lines 64--65
+Overfull \hbox (48.43092pt too wide) in paragraph at lines 65--66
 []\OT1/cmr/bx/n/12 Selektion ($\OML/cmm/m/it/12 ^^[$\OT1/cmr/bx/n/12 ): \OT1/cmr/m/n/12 Fil-tert Tu-pel auf Ba-sis ei-nes Pr[]adikats, z.B. $\OML/cmm/m/it/12 ^^[[]\OT1/cmr/m/n/12 ([])$. 
  []
 
 [3]
-Overfull \hbox (18.40747pt too wide) in paragraph at lines 65--66
+Overfull \hbox (18.40747pt too wide) in paragraph at lines 66--67
 []\OT1/cmr/bx/n/12 Projektion ($\OML/cmm/m/it/12 ^^Y$\OT1/cmr/bx/n/12 ): \OT1/cmr/m/n/12 Re-du-ziert die At-tri-but-men-ge, z.B. $\OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 ([])$. 
  []
 
 
-Overfull \hbox (38.34131pt too wide) in paragraph at lines 74--75
+Overfull \hbox (38.34131pt too wide) in paragraph at lines 75--76
 \OT1/cmr/m/n/12 Ziel der An-fra-ge-op-ti-mie-rung ist es, einen m[]oglichst kos-teng[]unstigen Ausf[]uhrungsplan
  []
 
 
-Overfull \hbox (25.29228pt too wide) in paragraph at lines 91--92
+Overfull \hbox (25.29228pt too wide) in paragraph at lines 92--93
 []\OT1/cmr/bx/n/12 Parallelisierung: \OT1/cmr/m/n/12 Nutzt meh-re-re CPU-Kerne zur gleich-zei-ti-gen Ausf[]uhrung
  []
 
 [4]
-Overfull \hbox (1.11095pt too wide) in paragraph at lines 92--93
+Overfull \hbox (1.11095pt too wide) in paragraph at lines 93--94
 []\OT1/cmr/bx/n/12 Materialisierung vs. Pi-pe-li-nie-rung: \OT1/cmr/m/n/12 Un-ter-schied-li-che Stra-te-gi-en zur
  []
 
 [5]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 125.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 126.
  [6]
-Overfull \hbox (1.52693pt too wide) in paragraph at lines 146--147
+Overfull \hbox (1.52693pt too wide) in paragraph at lines 147--148
 \OT1/cmr/m/n/12 RDF-DBMS (z.B. Apa-che Je-na, Vir-tuo-so, Bla-ze-graph) ver-ar-bei-ten SPARQL-
  []
 
 
-Overfull \hbox (18.3757pt too wide) in paragraph at lines 162--163
+Overfull \hbox (18.3757pt too wide) in paragraph at lines 163--164
 []\OT1/cmr/bx/n/12 Property Ta-bles: \OT1/cmr/m/n/12 Grup-pie-rung h[]aufig ge-mein-sam auf-tre-ten-der Pr[]adikate. 
  []
 
 [7]
-Overfull \hbox (8.63478pt too wide) in paragraph at lines 166--167
+Overfull \hbox (8.63478pt too wide) in paragraph at lines 167--168
 []\OT1/cmr/m/n/12 Diese Struk-tu-ren be-stim-men ma^^Y-geb-lich die Op-ti-mier-bar-keit von SPARQL-
  []
 
 
-Overfull \hbox (103.84349pt too wide) in paragraph at lines 166--167
+Overfull \hbox (103.84349pt too wide) in paragraph at lines 167--168
 \OT1/cmr/m/n/12 Anfragen und be-ein-flus-sen so-wohl den Pla-nungs-auf-wand als auch die Ausf[]uhrungsgeschwindigkeit. 
  []
 
-[8] (main.aux)
+
+Overfull \hbox (17.93777pt too wide) in paragraph at lines 170--170
+[]\OT1/cmr/bx/n/17.28 Optimierungsprobleme in RDF-Datenbanken 
+ []
+
+
+Overfull \hbox (15.73537pt too wide) in paragraph at lines 180--181
+\OT1/cmr/m/n/12 ei-nem mehr-stu-fi-gen Join []uber die Tri-pel \OT1/cmtt/m/n/12 (?book dc:creator ?author)\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 (?book
+ []
+
+[8]
+Overfull \hbox (6.72003pt too wide) in paragraph at lines 194--194
+[]\OT1/cmr/bx/n/14.4 Komplexe SPARQL-Konstrukte: OP-TIO-NAL, FIL-
+ []
+
+
+Overfull \hbox (15.9111pt too wide) in paragraph at lines 196--197
+\OT1/cmr/m/n/12 NAL er-zeugt im-pli-zit einen left ou-ter join, wo-durch be-stimm-te Join-Reihenfolgen
+ []
+
+
+Overfull \hbox (1.18565pt too wide) in paragraph at lines 196--197
+\OT1/cmr/m/n/12 aus-ge-schlos-sen wer-den. FILTER-Ausdr[]ucke, ins-be-son-de-re wenn sie auf BIND-
+ []
+
+[9]
+Overfull \hbox (11.97353pt too wide) in paragraph at lines 213--214
+\OT1/cmr/m/n/12 ve-ni-enz oder Ver-sio-nie-rung), doch f[]uhrt dies in der Op-ti-mie-rung zu zus[]atzlichem
+ []
+
+[10]
+Overfull \hbox (2.42802pt too wide) in paragraph at lines 222--222
+[]\OT1/cmr/m/n/12 Tim Berners-Lee, Ja-mes Hend-ler und Ora Las-si-la. []  The Se-man-tic Web\.
+ []
+
+
+Overfull \hbox (3.40233pt too wide) in paragraph at lines 222--222
+[]\OT1/cmr/m/n/12 Alfons Kem-per und An-dr^^Se Eick-ler. \OT1/cmr/m/it/12 Da-ten-bank-sys-te-me: Ei-ne Einf[]uhrung\OT1/cmr/m/n/12 .
+ []
+
+[11] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -584,17 +621,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13527 strings out of 474486
- 246807 string characters out of 5740416
+ 13542 strings out of 474486
+ 247325 string characters out of 5740416
  1978542 words of memory out of 5000000
- 35689 multiletter control sequences out of 15000+600000
+ 35704 multiletter control sequences out of 15000+600000
  565215 words of font info for 61 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  66i,6n,81p,845b,2371s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Ouabo Jordan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Ouabo Jordan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (8 pages, 137953 bytes).
+Output written on main.pdf (11 pages, 146820 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
+ 83 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
